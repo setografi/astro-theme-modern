@@ -1,0 +1,78 @@
+---
+interface Props {
+  number: string;
+  title: string;
+  content: string;
+}
+
+const { number, title, content } = Astro.props;
+---
+
+<div class="relative">
+  <button
+    data-dropdown={number}
+    class="dropdown-btn w-full rounded-lg bg-white p-4 text-left text-xl font-medium shadow-sm hover:bg-gray-50 focus:outline-none"
+  >
+    <span class="inline-flex items-center">
+      <span class="text-gray-400">{number}.</span>
+      <span class="ml-2">{title}</span>
+    </span>
+  </button>
+  <div
+    id={`dropdown${number}`}
+    class="dropdown-content mt-2 hidden w-full transform overflow-hidden rounded-lg bg-white shadow-lg transition-all duration-300 ease-in-out"
+    style="max-height: 0;"
+  >
+    <div class="p-4">
+      <p class="text-gray-600">{content}</p>
+    </div>
+  </div>
+</div>
+
+<script>
+  let activeDropdown = null;
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const buttons = document.querySelectorAll('.dropdown-btn');
+
+    buttons.forEach((button) => {
+      button.addEventListener('click', function () {
+        const number = this.getAttribute('data-dropdown');
+        const dropdown = document.getElementById(`dropdown${number}`);
+
+        if (activeDropdown === dropdown) {
+          toggleDropdown(dropdown);
+          return;
+        }
+
+        if (activeDropdown) {
+          toggleDropdown(activeDropdown, false);
+        }
+
+        toggleDropdown(dropdown, true);
+      });
+    });
+  });
+
+  function toggleDropdown(dropdown, show = null) {
+    const content = dropdown.querySelector('div');
+    const isHidden = dropdown.classList.contains('hidden');
+    const shouldShow = show !== null ? show : isHidden;
+
+    if (shouldShow) {
+      dropdown.classList.remove('hidden');
+      setTimeout(() => {
+        dropdown.style.maxHeight = `${content.scrollHeight}px`;
+      }, 0);
+      activeDropdown = dropdown;
+    } else {
+      dropdown.style.maxHeight = '0px';
+      setTimeout(() => {
+        dropdown.classList.add('hidden');
+      }, 300);
+      if (activeDropdown === dropdown) {
+        activeDropdown = null;
+      }
+    }
+  }
+</script>

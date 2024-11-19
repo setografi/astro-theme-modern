@@ -1,0 +1,33 @@
+---
+import Dropdown from '../common/Dropdown.astro';
+
+const dropdownData = [
+  {
+    number: '01',
+    title: 'STRATEGY',
+    content: 'Strategic content goes here...',
+  },
+  {
+    number: '02',
+    title: 'DESIGN',
+    content: 'Design content goes here...',
+  },
+  {
+    number: '03',
+    title: 'CHANGE',
+    content: 'Change content goes here...',
+  },
+];
+---
+
+<section class="my-4 h-full w-full bg-white px-4 py-8">
+  <h2 class="pb-4 text-4xl font-bold text-gray-900">Expertise</h2>
+
+  <div class="flex flex-col space-y-3">
+    {
+      dropdownData.map((item) => (
+        <Dropdown number={item.number} title={item.title} content={item.content} />
+      ))
+    }
+  </div>
+</section>
