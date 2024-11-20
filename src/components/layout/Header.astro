@@ -1,23 +1,22 @@
-<header>
-  <div class="flex items-center justify-between px-4 py-4 sm:px-6 sm:py-6 lg:px-12">
+<header class="h-full w-full">
+  <div class="flex items-center justify-between px-4 py-6 sm:px-6 lg:px-12">
     <!-- Brand logo -->
     <a
       href="/"
       class="rounded-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-neutral-950 dark:group-focus-visible:outline-neutral-500"
     >
-      <span class="text-2xl font-bold">Modern</span>
+      <span class="text-2xl font-bold text-neutral-950 dark:text-neutral-100">Modern</span>
     </a>
 
     <!-- Actions -->
-    <div class="flex items-center space-x-6 sm:space-x-4">
+    <div class="flex items-center space-x-6">
       <!-- Toggle theme mode -->
       <button
         type="button"
         id="theme-toggle"
-        class="inline-flex h-10 w-10 items-center justify-center rounded-full text-neutral-950 ring-neutral-950 transition duration-500 hover:bg-green-400 focus:outline-none focus-visible:ring-2 dark:text-neutral-500 dark:hover:bg-blue-400"
+        class="inline-flex h-12 w-12 items-center justify-center rounded-full text-neutral-950 ring-neutral-950 transition duration-500 hover:bg-green-600 focus:outline-none focus-visible:ring-2 dark:text-neutral-100 dark:hover:bg-blue-600"
       >
         <span class="sr-only">Toggle theme mode</span>
-
         <i id="theme-light" class="ri-sun-line ri-xl hidden"></i>
         <i id="theme-dark" class="ri-moon-line ri-xl block"></i>
       </button>
@@ -26,12 +25,11 @@
       <button
         type="button"
         id="menu-toggle"
-        class="inline-flex h-10 w-10 items-center justify-center rounded-full text-neutral-950 ring-neutral-950 transition duration-500 hover:bg-green-400 focus:outline-none focus-visible:ring-2 dark:text-neutral-500 dark:hover:bg-blue-400"
+        class="inline-flex h-12 w-12 items-center justify-center rounded-full text-neutral-950 ring-neutral-950 transition duration-500 hover:bg-green-600 focus:outline-none focus-visible:ring-2 dark:text-neutral-100 dark:hover:bg-blue-600"
         aria-controls="website-menu"
         aria-expanded="false"
       >
         <span class="sr-only">Toggle menu</span>
-
         <i id="menu-icon-open" class="ri-menu-line ri-lg block"></i>
         <i id="menu-icon-close" class="ri-close-large-line ri-lg hidden"></i>
       </button>
@@ -39,28 +37,40 @@
   </div>
 
   <!-- Menu content -->
-  <div id="website-menu" class="mx-auto hidden max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
-    <div class="grid grid-cols-1 gap-16 pb-24 pt-6 lg:grid-cols-2 lg:pt-12">
+  <div id="website-menu" class="mx-auto hidden h-[calc(100vh-5rem)] max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="grid h-full grid-cols-1 gap-8 py-8 lg:grid-cols-2">
       <div
-        class="hidden items-center justify-center rounded-3xl bg-green-400 px-6 py-8 lg:flex dark:bg-blue-400"
+        class="hidden items-center justify-center rounded-3xl bg-green-600 px-8 py-12 dark:bg-blue-600 lg:flex"
       >
-        <p class="max-w-sm text-xl italic leading-loose text-neutral-950 dark:text-neutral-500">
+        <p class="max-w-sm text-2xl italic leading-relaxed text-neutral-100">
           <span class="font-medium">Modern</span> enables seamless user engagement and drives conversions.
         </p>
       </div>
 
       <!-- Navigation -->
-      <nav class="flex flex-col gap-1 divide-y divide-neutral-800 dark:divide-neutral-300">
-        <a href="/" class="group py-6 text-3xl font-medium tracking-tight transition">
+      <nav class="flex flex-col gap-2 divide-y divide-neutral-800 dark:divide-neutral-300">
+        <a
+          href="/"
+          class="group py-6 text-3xl font-semibold tracking-tight text-neutral-950 transition dark:text-neutral-100"
+        >
           <span class="group-hover:underline">Home</span>
         </a>
-        <a href="/about" class="group py-6 text-3xl font-medium tracking-tight transition">
+        <a
+          href="/about"
+          class="group py-6 text-3xl font-semibold tracking-tight text-neutral-950 transition dark:text-neutral-100"
+        >
           <span class="group-hover:underline">About</span>
         </a>
-        <a href="/pricing" class="group py-6 text-3xl font-medium tracking-tight transition">
+        <a
+          href="/pricing"
+          class="group py-6 text-3xl font-semibold tracking-tight text-neutral-950 transition dark:text-neutral-100"
+        >
           <span class="group-hover:underline">Pricing</span>
         </a>
-        <a href="/contact" class="group py-6 text-3xl font-medium tracking-tight transition">
+        <a
+          href="/contact"
+          class="group py-6 text-3xl font-semibold tracking-tight text-neutral-950 transition dark:text-neutral-100"
+        >
           <span class="group-hover:underline">Contact</span>
         </a>
       </nav>

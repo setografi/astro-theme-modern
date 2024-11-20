@@ -1,22 +1,23 @@
-<section class="grid h-dvh w-full grid-cols-3 grid-rows-2 gap-4 px-4">
+<!-- Hero.astro -->
+<section class="grid h-dvh w-full grid-cols-3 grid-rows-2 gap-6 px-4 py-8">
   <!-- Hero Content -->
   <div
     class="relative col-span-2 row-span-2 overflow-hidden rounded-3xl p-8"
     style={`background-image: url('/img/hero-image.jpg'); background-size: cover; background-position: center;`}
   >
-    <div class="flex h-full flex-row items-end justify-between gap-2">
-      <div class="flex flex-col items-start justify-end space-y-2">
-        <h2 class="text-4xl font-bold text-neutral-500">Modern</h2>
-        <p class="text-lg text-neutral-100">
+    <div class="flex h-full flex-col items-start justify-end space-y-4">
+      <div class="flex flex-col items-start space-y-3">
+        <h1 class="text-5xl font-bold text-neutral-500">Modern</h1>
+        <p class="text-xl leading-relaxed text-neutral-100">
           Elevate your business with a sleek and <br /> powerful design crafted for innovation and growth.
         </p>
       </div>
 
       <button
-        class="group rounded-3xl bg-neutral-200 p-4 px-6 py-3 transition duration-500 hover:bg-neutral-700 dark:bg-neutral-700 dark:hover:bg-neutral-200"
+        class="group mt-6 rounded-3xl bg-neutral-200 px-8 py-4 transition duration-500 hover:bg-neutral-700 dark:bg-neutral-700 dark:hover:bg-neutral-200"
       >
         <span
-          class="text-sm font-medium text-neutral-700 transition-all group-hover:text-neutral-200 dark:text-neutral-200 dark:group-hover:text-neutral-700"
+          class="text-base font-medium text-neutral-700 transition-all group-hover:text-neutral-200 dark:text-neutral-200 dark:group-hover:text-neutral-700"
         >
           Get Started
         </span>
@@ -25,27 +26,26 @@
   </div>
 
   <!-- Feature Hero Section -->
-  <div class="relative rounded-3xl bg-green-400 p-6 dark:bg-blue-400">
-    <div class="flex h-full items-start justify-end space-y-2">
-      <p class="text-lg text-neutral-950 dark:text-neutral-500">
+  <div class="relative rounded-3xl bg-green-600 p-8 dark:bg-blue-600">
+    <div class="flex h-full flex-col justify-between">
+      <p class="text-xl leading-relaxed text-neutral-100">
         Tailor-made for startups and SaaS platforms, Modern enables seamless user engagement and
         drives conversions.
       </p>
+      <div class="absolute bottom-8 right-8 rounded-full bg-neutral-100 p-4">
+        <i class="ri-home-4-line ri-xl text-green-600 dark:text-blue-600"></i>
+      </div>
     </div>
-    <p class="absolute bottom-6 right-6 rounded-full bg-neutral-600 p-4 dark:bg-neutral-200">
-      <i class="ri-home-4-line ri-xl text-neutral-200 dark:text-neutral-600"></i>
-    </p>
   </div>
 
   <!-- Statistic Section -->
-  <div
-    class="relative flex flex-col items-start justify-end rounded-3xl bg-neutral-700 p-6 dark:bg-neutral-100"
-  >
-    <p class="text-4xl font-bold text-neutral-500 dark:text-neutral-950">200+</p>
-    <p class="mt-2 text-lg text-neutral-100 dark:text-neutral-700">Businesses powered globally</p>
-
-    <p class="absolute bottom-6 right-6 rounded-full bg-blue-200 p-4 dark:bg-green-200">
-      <i class="ri-user-6-line ri-xl text-neutral-200"></i>
-    </p>
+  <div class="relative rounded-3xl bg-neutral-700 p-8 dark:bg-neutral-200">
+    <div class="flex h-full flex-col justify-between">
+      <p class="text-5xl font-bold text-neutral-100 dark:text-neutral-950">200+</p>
+      <p class="text-xl text-neutral-200 dark:text-neutral-700">Businesses powered globally</p>
+      <div class="absolute bottom-8 right-8 rounded-full bg-green-600 p-4 dark:bg-blue-600">
+        <i class="ri-user-6-line ri-xl text-neutral-100"></i>
+      </div>
+    </div>
   </div>
 </section>

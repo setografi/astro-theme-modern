@@ -1,73 +1,88 @@
----
-// Astro component
----
+<!-- Contact.astro -->
+<section class="h-full w-full px-4 py-16">
+  <div class="grid h-full gap-8">
+    <!-- Contact Info & Social -->
+    <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
+      <!-- Contact Info -->
+      <div class="col-span-2 rounded-3xl bg-green-600 p-8 dark:bg-blue-600">
+        <div class="flex h-full flex-col justify-between">
+          <div class="space-y-6">
+            <h2 class="text-4xl font-bold text-neutral-100">Contact Us</h2>
+            <div class="space-y-4">
+              <p class="flex items-center gap-3 text-xl text-neutral-100">
+                <i class="ri-phone-line"></i>
+                +62 (29) 123 44 56
+              </p>
+              <p class="flex items-center gap-3 text-xl text-neutral-100">
+                <i class="ri-mail-line"></i>
+                modern@mail.com
+              </p>
+              <p class="flex items-center gap-3 text-xl text-neutral-100">
+                <i class="ri-time-line"></i>
+                Mon-Fri: 9:00 - 17:00
+              </p>
+            </div>
+          </div>
 
-<!-- Contact Section -->
-<section class="my-4 grid grid-rows-2 gap-4 px-4">
-  <!-- Contact Info -->
-  <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
-    <div
-      class="col-span-2 flex flex-col items-start justify-center gap-4 rounded-3xl bg-green-400 p-6 dark:bg-blue-400"
-    >
-      <h2 class="text-4xl font-bold text-neutral-950 dark:text-neutral-500">Contact Us</h2>
-      <div class="space-y-2">
-        <p class="text-lg text-neutral-950 dark:text-neutral-500">+62 (29) 123 44 56</p>
-        <p class="text-lg text-neutral-950 dark:text-neutral-500">modern@mail.com</p>
-        <p class="text-lg text-neutral-950 dark:text-neutral-500">Mon-Fri: 9:00 - 17:00</p>
+          <div class="mt-8 flex flex-col gap-2">
+            <p class="text-xl text-neutral-100">
+              {new Date().toLocaleDateString('en-US', { weekday: 'long' })}
+            </p>
+            <p class="text-xl text-neutral-100">
+              {
+                new Date().toLocaleDateString('en-US', {
+                  year: 'numeric',
+                  month: 'long',
+                  day: 'numeric',
+                })
+              }
+            </p>
+          </div>
+        </div>
       </div>
 
-      <!-- Date -->
-      <div class="flex flex-col">
-        <p class="text-lg text-neutral-950 dark:text-neutral-500">Day</p>
-        <p class="text-lg text-neutral-950 dark:text-neutral-500">Date</p>
+      <!-- Social Icons -->
+      <div class="rounded-3xl border-2 border-green-600 p-8 dark:border-blue-600">
+        <div class="flex h-full flex-col justify-center">
+          <div class="flex justify-center gap-6">
+            <a
+              href="#"
+              class="rounded-full bg-neutral-700 p-4 text-neutral-100 transition-colors hover:bg-accent-orange dark:bg-neutral-200 dark:text-neutral-700 dark:hover:bg-accent-orange"
+            >
+              <span class="sr-only">Facebook</span>
+              <i class="ri-facebook-line ri-lg"></i>
+            </a>
+            <a
+              href="#"
+              class="rounded-full bg-neutral-700 p-4 text-neutral-100 transition-colors hover:bg-accent-orange dark:bg-neutral-200 dark:text-neutral-700 dark:hover:bg-accent-orange"
+            >
+              <span class="sr-only">Whatsapp</span>
+              <i class="ri-whatsapp-line ri-lg"></i>
+            </a>
+            <a
+              href="#"
+              class="rounded-full bg-neutral-700 p-4 text-neutral-100 transition-colors hover:bg-accent-orange dark:bg-neutral-200 dark:text-neutral-700 dark:hover:bg-accent-orange"
+            >
+              <span class="sr-only">Instagram</span>
+              <i class="ri-instagram-line ri-lg"></i>
+            </a>
+          </div>
+
+          <div class="mt-8 text-center">
+            <h3 class="mb-4 text-2xl font-semibold text-neutral-950 dark:text-neutral-100">
+              Connect With Us
+            </h3>
+            <p class="text-lg text-neutral-700 dark:text-neutral-300">
+              Follow us on social media to stay updated with our latest news, projects, and
+              insights.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
 
-    <!-- Social Icons -->
-    <div
-      class="flex flex-col items-center justify-center rounded-3xl border-2 border-green-400 p-6 dark:border-blue-400"
-    >
-      <div class="mb-4">
-        <a
-          href="#"
-          class="text-neutral-950 hover:text-accent-orange dark:text-neutral-500 dark:hover:text-blue-400"
-        >
-          <span class="sr-only">Facebook</span>
-          <i class="ri-facebook-line ri-2x"></i>
-        </a>
-        <a
-          href="#"
-          class="text-neutral-950 hover:text-accent-orange dark:text-neutral-500 dark:hover:text-blue-400"
-        >
-          <span class="sr-only">Whatsapp</span>
-          <i class="ri-whatsapp-line ri-2x"></i>
-        </a>
-        <a
-          href="#"
-          class="text-neutral-950 hover:text-accent-orange dark:text-neutral-500 dark:hover:text-blue-400"
-        >
-          <span class="sr-only">Instagram</span>
-          <i class="ri-instagram-line ri-2x"></i>
-        </a>
-      </div>
-
-      <div class="flex flex-col gap-4">
-        <h3 class="text-center text-lg text-neutral-950 dark:text-neutral-500">
-          Lorem ipsum dolor sit amet.
-        </h3>
-        <p class="text-center text-sm text-neutral-950 dark:text-neutral-500">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis tempore ipsam delectus
-          optio quo numquam quibusdam inventore ratione? Laudantium, autem vitae magni corporis
-          totam sunt ut mollitia vel aliquam. Cupiditate!
-        </p>
-      </div>
-    </div>
-  </div>
-
-  <!-- Map -->
-  <div class="h-80 rounded-3xl bg-gray-200">
-    <!-- Replace with actual map integration -->
-    <div class="h-full w-full overflow-hidden rounded-3xl">
+    <!-- Map -->
+    <div class="h-80 overflow-hidden rounded-3xl">
       <iframe
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.341309521895!2d106.79919777369996!3d-6.218643460905074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f14d30079f01%3A0x2e74f2341fff266d!2sStadion%20Utama%20Gelora%20Bung%20Karno!5e0!3m2!1sid!2sid!4v1732025447112!5m2!1sid!2sid"
         title="Map Integration"
@@ -76,7 +91,9 @@
         style="border:0;"
         allowfullscreen=""
         loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"></iframe>
+        referrerpolicy="no-referrer-when-downgrade"
+      >
+      </iframe>
     </div>
   </div>
 </section>
