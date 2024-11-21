@@ -2,6 +2,15 @@
 export default {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
   theme: {
+    screens: {
+      // Mobile-first breakpoints
+      xs: '375px', // Extra small devices
+      sm: '576px', // Small devices
+      md: '768px', // Medium devices (tablets)
+      lg: '992px', // Large devices (desktops)
+      xl: '1200px', // Extra large devices
+      '2xl': '1440px', // Full HD and above
+    },
     extend: {
       colors: {
         blue: {
@@ -38,8 +47,17 @@ export default {
           900: '#161616',
         },
         accent: {
-          magenta: '#D947A4',
-          orange: '#E9641A',
+          orange: {
+            100: '#FFE5DC', // Warna paling terang
+            200: '#FFC4A8',
+            300: '#FFA375',
+            400: '#FF8A4D',
+            500: '#E9641A', // Warna asli
+            600: '#CC5010',
+            700: '#AF3C06',
+            800: '#932A00',
+            900: '#771A00', // Warna paling gelap
+          },
         },
       },
     },

@@ -1,54 +1,76 @@
-<footer class="w-full bg-green-600 px-4 py-12 text-neutral-100 dark:bg-blue-600 sm:px-6 lg:px-8">
+<footer
+  class="w-full bg-green-600 px-4 py-8 text-neutral-100 dark:bg-blue-600 sm:px-6 sm:py-12 lg:px-8"
+>
   <div class="mx-auto max-w-7xl">
-    <div class="grid gap-8 md:grid-cols-4">
-      <!-- About -->
-      <div>
-        <h4 class="mb-4 text-2xl font-bold">Modern</h4>
-        <p class="text-sm leading-relaxed">
+    {/* Responsive Grid Layout */}
+    <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-8 md:grid-cols-4">
+      {/* About Section - Adjusts on Different Screens */}
+      <div class="text-center sm:text-left">
+        <h4 class="mb-3 text-xl font-bold sm:mb-4 sm:text-2xl">Modern</h4>
+        <p class="text-xs leading-relaxed sm:text-sm">
           Modern is a forward-thinking design studio dedicated to creating stunning web experiences.
         </p>
       </div>
 
-      <!-- Quick Links -->
-      <div>
-        <h4 class="mb-4 text-2xl font-bold">Quick Links</h4>
-        <ul class="space-y-2 text-sm">
-          <li><a href="#" class="transition hover:text-neutral-300">Home</a></li>
-          <li><a href="#" class="transition hover:text-neutral-300">About</a></li>
-          <li><a href="#" class="transition hover:text-neutral-300">Services</a></li>
-          <li><a href="#" class="transition hover:text-neutral-300">Contact</a></li>
+      {/* Quick Links - Responsive Typography */}
+      <div class="text-center sm:text-left">
+        <h4 class="mb-3 text-xl font-bold sm:mb-4 sm:text-2xl">Quick Links</h4>
+        <ul class="space-y-1.5 text-xs sm:space-y-2 sm:text-sm">
+          <li><a href="/" class="transition hover:text-neutral-300">Home</a></li>
+          <li><a href="/about" class="transition hover:text-neutral-300">About</a></li>
+          <li><a href="/pricing" class="transition hover:text-neutral-300">Pricing</a></li>
+          <li><a href="/contact" class="transition hover:text-neutral-300">Contact</a></li>
         </ul>
       </div>
 
-      <!-- Social Media -->
-      <div>
-        <h4 class="mb-4 text-2xl font-bold">Follow Us</h4>
-        <div class="flex space-x-6">
-          <a href="#" class="transition hover:text-neutral-300" aria-label="Facebook">
-            <i class="ri-facebook-circle-line ri-xl"></i>
+      {/* Social Media - Centered on Mobile, Left-Aligned on Larger Screens */}
+      <div class="flex flex-col items-center sm:items-start">
+        <h4 class="mb-3 text-xl font-bold sm:mb-4 sm:text-2xl">Follow Us</h4>
+        <div class="flex space-x-4 sm:space-x-6">
+          <a
+            href="https://www.facebook.com/"
+            target="_blank"
+            class="transition hover:text-neutral-300"
+            aria-label="Facebook"
+          >
+            <i class="ri-facebook-circle-line ri-lg sm:ri-xl"></i>
           </a>
-          <a href="#" class="transition hover:text-neutral-300" aria-label="Whatsapp">
-            <i class="ri-whatsapp-line ri-xl"></i>
+          <a
+            href="https://www.whatsapp.com/"
+            target="_blank"
+            class="transition hover:text-neutral-300"
+            aria-label="Whatsapp"
+          >
+            <i class="ri-whatsapp-line ri-lg sm:ri-xl"></i>
           </a>
-          <a href="#" class="transition hover:text-neutral-300" aria-label="Instagram">
-            <i class="ri-instagram-line ri-xl"></i>
+          <a
+            href="https://www.instagram.com/"
+            target="_blank"
+            class="transition hover:text-neutral-300"
+            aria-label="Instagram"
+          >
+            <i class="ri-instagram-line ri-lg sm:ri-xl"></i>
           </a>
         </div>
       </div>
 
-      <!-- Newsletter -->
-      <div>
-        <h4 class="mb-4 text-2xl font-bold">Newsletter</h4>
-        <p class="mb-4 text-sm">Subscribe to get the latest updates and news.</p>
-        <form action="#" method="POST" class="flex">
+      {/* Newsletter - Full Width Form on Mobile */}
+      <div class="text-center sm:text-left">
+        <h4 class="mb-3 text-xl font-bold sm:mb-4 sm:text-2xl">Newsletter</h4>
+        <p class="mb-3 text-xs sm:mb-4 sm:text-sm">Subscribe to get the latest updates and news.</p>
+        <form
+          action="#"
+          method="POST"
+          class="mx-auto flex max-w-xs flex-col sm:mx-0 sm:max-w-full sm:flex-row"
+        >
           <input
             type="email"
             placeholder="Enter your email"
-            class="flex-1 rounded-l-lg border border-neutral-100 bg-transparent p-3 text-neutral-100 placeholder:text-neutral-300"
+            class="mb-2 w-full rounded-lg border border-neutral-100 bg-transparent p-2 text-xs text-neutral-100 placeholder:text-neutral-300 sm:mb-0 sm:flex-1 sm:rounded-l-lg sm:p-3 sm:text-sm"
           />
           <button
             type="submit"
-            class="rounded-r-lg bg-neutral-100 px-6 py-3 text-green-600 transition hover:bg-neutral-200 dark:text-blue-600"
+            class="w-full rounded-lg bg-neutral-100 px-4 py-2 text-xs text-green-600 transition hover:bg-neutral-200 dark:text-blue-600 sm:w-auto sm:rounded-r-lg sm:px-6 sm:py-3 sm:text-sm"
           >
             Subscribe
           </button>
@@ -56,11 +78,13 @@
       </div>
     </div>
 
-    <!-- Copyright -->
-    <div class="mt-12 border-t border-neutral-100/20 pt-8 text-center text-sm">
+    {/* Copyright Section - Responsive Text and Layout */}
+    <div
+      class="mt-8 border-t border-neutral-100/20 pt-6 text-center text-xs sm:mt-12 sm:pt-8 sm:text-sm"
+    >
       © 2024 Modern. All rights reserved. |
-      <a href="#" class="transition hover:text-neutral-300">Privacy Policy</a> |
-      <a href="#" class="transition hover:text-neutral-300">Terms of Service</a>
+      <a href="/privacy" class="ml-1 transition hover:text-neutral-300">Privacy Policy</a> |
+      <a href="/terms" class="ml-1 transition hover:text-neutral-300">Terms of Service</a>
     </div>
   </div>
 </footer>

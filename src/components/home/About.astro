@@ -1,24 +1,33 @@
 <!-- About.astro -->
 <section class="h-full w-full px-4 py-16">
-  <div class="rounded-3xl bg-neutral-700 p-8 dark:bg-neutral-200">
-    <div class="grid h-full gap-8 lg:grid-cols-3">
-      <h2 class="text-4xl font-bold text-neutral-100 dark:text-neutral-950">About</h2>
-      <div class="flex flex-col items-start gap-8 lg:col-span-2">
-        <p class="text-xl leading-relaxed text-neutral-200 dark:text-neutral-800">
+  <div class="rounded-3xl bg-neutral-700 p-4 dark:bg-neutral-200 sm:p-6 md:p-8">
+    {/* Mobile-first grid with responsive column layout */}
+    <div class="grid h-full grid-cols-1 gap-4 sm:gap-6 md:gap-8 lg:grid-cols-3">
+      {/* Responsive Heading */}
+      <h2
+        class="mb-4 text-2xl font-bold text-neutral-100 dark:text-neutral-950 sm:mb-0 sm:text-3xl md:text-4xl"
+      >
+        About
+      </h2>
+
+      {/* Content Column - Full width on mobile, 2 columns on larger screens */}
+      <div class="flex flex-col items-start gap-4 sm:gap-6 lg:col-span-2">
+        <p
+          class="text-base leading-relaxed text-neutral-200 dark:text-neutral-800 sm:text-lg md:text-xl"
+        >
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio exercitationem iste
           beatae obcaecati ducimus, assumenda porro nobis officiis nemo praesentium accusamus non
           maiores illo aliquid ab, qui, expedita hic eveniet? Lorem, ipsum dolor sit amet
-          consectetur adipisicing elit. Deserunt corrupti distinctio expedita explicabo, doloribus
-          ipsa, velit atque deleniti voluptates cumque quos eos est omnis tempora magni dolore
-          provident ex iusto.
+          consectetur adipisicing elit.
         </p>
 
+        {/* Responsive Button */}
         <a
           href="/about"
-          class="group rounded-3xl bg-green-600 px-8 py-4 transition duration-500 hover:bg-neutral-200 dark:bg-blue-600 dark:hover:bg-neutral-700"
+          class="group rounded-3xl bg-green-600 px-4 py-2 transition duration-500 hover:bg-neutral-200 dark:bg-blue-600 dark:hover:bg-neutral-700 sm:px-6 sm:py-3 md:px-8 md:py-4"
         >
           <span
-            class="text-base font-medium text-neutral-100 transition-all group-hover:text-neutral-700 dark:text-neutral-100 dark:group-hover:text-neutral-200"
+            class="text-sm font-medium text-neutral-100 transition-all group-hover:text-neutral-700 dark:text-neutral-100 dark:group-hover:text-neutral-200 sm:text-base"
           >
             Read About Us
           </span>

@@ -1,34 +1,43 @@
 <!-- Contact.astro -->
 <section class="h-full w-full px-4 py-16">
-  <div class="grid h-full gap-8">
-    <!-- Contact Info & Social -->
-    <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
-      <!-- Contact Info -->
-      <div class="col-span-2 rounded-3xl bg-green-600 p-8 dark:bg-blue-600">
+  <div class="grid h-full gap-4 md:gap-6">
+    {/* Responsive Grid for Contact Info & Social - Mobile First */}
+    <div class="grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-6 lg:grid-cols-3">
+      {/* Contact Info - Full width on mobile, 2 columns on larger screens */}
+      <div
+        class="col-span-1 rounded-3xl bg-green-600 p-4 dark:bg-blue-600 sm:p-6 md:col-span-2 md:p-8"
+      >
         <div class="flex h-full flex-col justify-between">
-          <div class="space-y-6">
-            <h2 class="text-4xl font-bold text-neutral-100">Contact Us</h2>
-            <div class="space-y-4">
-              <p class="flex items-center gap-3 text-xl text-neutral-100">
+          <div class="space-y-4 sm:space-y-6">
+            <h2 class="text-2xl font-bold text-neutral-100 sm:text-3xl md:text-4xl">Contact Us</h2>
+            <div class="space-y-2 sm:space-y-4">
+              <p
+                class="flex items-center gap-2 text-base text-neutral-100 sm:gap-3 sm:text-lg md:text-xl"
+              >
                 <i class="ri-phone-line"></i>
                 +62 (29) 123 44 56
               </p>
-              <p class="flex items-center gap-3 text-xl text-neutral-100">
+              <p
+                class="flex items-center gap-2 text-base text-neutral-100 sm:gap-3 sm:text-lg md:text-xl"
+              >
                 <i class="ri-mail-line"></i>
                 modern@mail.com
               </p>
-              <p class="flex items-center gap-3 text-xl text-neutral-100">
+              <p
+                class="flex items-center gap-2 text-base text-neutral-100 sm:gap-3 sm:text-lg md:text-xl"
+              >
                 <i class="ri-time-line"></i>
                 Mon-Fri: 9:00 - 17:00
               </p>
             </div>
           </div>
 
-          <div class="mt-8 flex flex-col gap-2">
-            <p class="text-xl text-neutral-100">
+          {/* Date Display - Responsive Typography */}
+          <div class="mt-4 flex flex-col gap-1 sm:mt-6 sm:gap-2 md:mt-8">
+            <p class="text-base text-neutral-100 sm:text-lg md:text-xl">
               {new Date().toLocaleDateString('en-US', { weekday: 'long' })}
             </p>
-            <p class="text-xl text-neutral-100">
+            <p class="text-base text-neutral-100 sm:text-lg md:text-xl">
               {
                 new Date().toLocaleDateString('en-US', {
                   year: 'numeric',
@@ -41,38 +50,47 @@
         </div>
       </div>
 
-      <!-- Social Icons -->
-      <div class="rounded-3xl border-2 border-green-600 p-8 dark:border-blue-600">
+      {/* Social Icons - Full width on mobile, 1 column on larger screens */}
+      <div
+        class="col-span-1 rounded-3xl border-2 border-green-600 p-4 dark:border-blue-600 sm:p-6 md:p-8"
+      >
         <div class="flex h-full flex-col justify-center">
-          <div class="flex justify-center gap-6">
+          {/* Responsive Social Icons Alignment */}
+          <div class="flex justify-center gap-4 sm:gap-6">
             <a
-              href="#"
-              class="rounded-full bg-neutral-700 p-4 text-neutral-100 transition-colors hover:bg-accent-orange dark:bg-neutral-200 dark:text-neutral-700 dark:hover:bg-accent-orange"
+              href="https://www.facebook.com/"
+              target="_blank"
+              class="hover:bg-accent-orange-500 rounded-full bg-neutral-700 p-3 text-neutral-100 transition-colors dark:bg-neutral-200 dark:text-neutral-700"
             >
               <span class="sr-only">Facebook</span>
-              <i class="ri-facebook-line ri-lg"></i>
+              <i class="ri-facebook-line ri-xl"></i>
             </a>
             <a
-              href="#"
-              class="rounded-full bg-neutral-700 p-4 text-neutral-100 transition-colors hover:bg-accent-orange dark:bg-neutral-200 dark:text-neutral-700 dark:hover:bg-accent-orange"
+              href="https://www.whatsapp.com/"
+              target="_blank"
+              class="hover:bg-accent-orange-500 rounded-full bg-neutral-700 p-3 text-neutral-100 transition-colors dark:bg-neutral-200 dark:text-neutral-700"
             >
               <span class="sr-only">Whatsapp</span>
-              <i class="ri-whatsapp-line ri-lg"></i>
+              <i class="ri-whatsapp-line ri-xl"></i>
             </a>
             <a
-              href="#"
-              class="rounded-full bg-neutral-700 p-4 text-neutral-100 transition-colors hover:bg-accent-orange dark:bg-neutral-200 dark:text-neutral-700 dark:hover:bg-accent-orange"
+              href="https://www.instagram.com/"
+              target="_blank"
+              class="hover:bg-accent-orange-500 rounded-full bg-neutral-700 p-3 text-neutral-100 transition-colors dark:bg-neutral-200 dark:text-neutral-700"
             >
               <span class="sr-only">Instagram</span>
-              <i class="ri-instagram-line ri-lg"></i>
+              <i class="ri-instagram-line ri-xl"></i>
             </a>
           </div>
 
-          <div class="mt-8 text-center">
-            <h3 class="mb-4 text-2xl font-semibold text-neutral-950 dark:text-neutral-100">
+          {/* Responsive Text */}
+          <div class="mt-4 text-center sm:mt-6 md:mt-8">
+            <h3
+              class="mb-2 text-xl font-semibold text-neutral-950 dark:text-neutral-100 sm:mb-4 sm:text-2xl"
+            >
               Connect With Us
             </h3>
-            <p class="text-lg text-neutral-700 dark:text-neutral-300">
+            <p class="text-sm text-neutral-700 dark:text-neutral-300 sm:text-base md:text-lg">
               Follow us on social media to stay updated with our latest news, projects, and
               insights.
             </p>
@@ -81,8 +99,8 @@
       </div>
     </div>
 
-    <!-- Map -->
-    <div class="h-80 overflow-hidden rounded-3xl">
+    {/* Responsive Map */}
+    <div class="h-48 overflow-hidden rounded-3xl sm:h-64 md:h-80">
       <iframe
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.341309521895!2d106.79919777369996!3d-6.218643460905074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f14d30079f01%3A0x2e74f2341fff266d!2sStadion%20Utama%20Gelora%20Bung%20Karno!5e0!3m2!1sid!2sid!4v1732025447112!5m2!1sid!2sid"
         title="Map Integration"

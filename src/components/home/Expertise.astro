@@ -25,9 +25,11 @@ const dropdownData = [
 
 <!-- Expertise.astro -->
 <section class="h-full w-full px-4 py-16">
-  <h2 class="mb-8 text-4xl font-bold text-neutral-950 dark:text-neutral-100">Expertise</h2>
+  <h2 class="mb-8 text-3xl font-bold text-neutral-950 dark:text-neutral-100 md:text-4xl">
+    Expertise
+  </h2>
 
-  <div class="flex flex-col space-y-4">
+  <div class="flex flex-col space-y-3 md:space-y-4">
     {
       dropdownData.map((item) => (
         <Dropdown number={item.number} title={item.title} content={item.content} />
