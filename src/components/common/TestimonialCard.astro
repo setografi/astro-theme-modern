@@ -1,0 +1,70 @@
+---
+// TestimonialCard.astro
+
+interface Props {
+  quote: string;
+  name: string;
+  role: string;
+  company: string;
+  variant: 'dark' | 'accent' | 'orange';
+}
+
+// Memastikan properti yang diterima sesuai tipe
+const { quote, name, role, company, variant } = Astro.props as Props;
+
+// Definisi gaya berdasarkan varian
+const styles = {
+  dark: {
+    card: 'bg-neutral-700 dark:bg-neutral-200',
+    quote: 'text-green-600 dark:text-blue-600',
+    text: 'text-neutral-200 dark:text-neutral-800',
+    icon: 'bg-green-600 dark:bg-blue-600',
+    iconColor: 'text-neutral-100',
+    name: 'text-neutral-100 dark:text-neutral-950',
+    role: 'text-neutral-300 dark:text-neutral-700',
+  },
+  accent: {
+    card: 'bg-green-600 dark:bg-blue-600',
+    quote: 'text-neutral-100',
+    text: 'text-neutral-100',
+    icon: 'bg-neutral-100',
+    iconColor: 'text-green-600 dark:text-blue-600',
+    name: 'text-neutral-100',
+    role: 'text-neutral-200',
+  },
+  orange: {
+    card: 'bg-accent-orange-500',
+    quote: 'text-neutral-100',
+    text: 'text-neutral-100',
+    icon: 'bg-neutral-100',
+    iconColor: 'text-accent-orange-500',
+    name: 'text-neutral-100',
+    role: 'text-neutral-100',
+  },
+} as const;
+
+// Pilih gaya berdasarkan varian
+const currentStyle = styles[variant];
+---
+
+<div class={`flex flex-col justify-between rounded-3xl ${currentStyle.card} p-4 sm:p-6 md:p-8`}>
+  <div class="mb-4 sm:mb-6">
+    <i class={`ri-double-quotes-l ri-2x sm:ri-3x ${currentStyle.quote}`}></i>
+    <p class={`mt-2 text-base leading-relaxed ${currentStyle.text} sm:mt-4 sm:text-lg`}>
+      {quote}
+    </p>
+  </div>
+  <div class="flex items-center gap-2 sm:gap-4">
+    <div class={`overflow-hidden rounded-full ${currentStyle.icon} px-2 md:px-1 py-3`}>
+      <i class={`ri-user-3-line ri-xl p-1 ${currentStyle.iconColor} sm:p-2`}></i>
+    </div>
+    <div>
+      <h3 class={`text-sm font-semibold ${currentStyle.name} sm:text-base font-nunito-sans`}>
+        {name}
+      </h3>
+      <p class={`text-xs ${currentStyle.role} sm:text-sm font-nunito-sans`}>
+        {role}, {company}
+      </p>
+    </div>
+  </div>
+</div>

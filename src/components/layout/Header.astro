@@ -1,12 +1,16 @@
 <header class="h-full w-full">
   {/* Responsive Navigation Container */}
-  <div class="flex items-center justify-between px-4 py-4 sm:px-6 lg:px-12">
+  <div
+    class="relative z-20 flex items-center justify-between bg-neutral-100 px-4 py-4 dark:bg-neutral-600 sm:px-6 lg:px-12"
+  >
     {/* Brand Logo - Responsive Typography */}
     <a
       href="/"
       class="rounded-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-neutral-950 dark:group-focus-visible:outline-neutral-500"
     >
-      <span class="text-xl font-bold text-neutral-950 dark:text-neutral-100 sm:text-2xl">
+      <span
+        class="font-nunito-sans text-xl font-bold text-neutral-950 transition-colors duration-300 dark:text-neutral-100 sm:text-2xl"
+      >
         Modern
       </span>
     </a>
@@ -17,24 +21,26 @@
       <button
         type="button"
         id="theme-toggle"
-        class="inline-flex h-10 w-10 items-center justify-center rounded-full text-neutral-950 ring-neutral-950 transition duration-500 hover:bg-green-600 focus:outline-none focus-visible:ring-2 dark:text-neutral-100 dark:hover:bg-blue-600 sm:h-12 sm:w-12"
+        class="inline-flex h-10 w-10 items-center justify-center rounded-full text-neutral-950 ring-neutral-950 transition-all duration-300 hover:bg-green-600 focus:outline-none focus-visible:ring-2 dark:text-neutral-100 dark:hover:bg-blue-600 sm:h-12 sm:w-12"
       >
         <span class="sr-only">Toggle theme mode</span>
-        <i id="theme-light" class="ri-sun-line ri-xl hidden"></i>
-        <i id="theme-dark" class="ri-moon-line ri-xl block"></i>
+        <i id="theme-light" class="ri-sun-line ri-xl hidden transition-opacity duration-300"></i>
+        <i id="theme-dark" class="ri-moon-line ri-xl block transition-opacity duration-300"></i>
       </button>
 
       {/* Menu Toggle - Responsive Size */}
       <button
         type="button"
         id="menu-toggle"
-        class="inline-flex h-10 w-10 items-center justify-center rounded-full text-neutral-950 ring-neutral-950 transition duration-500 hover:bg-green-600 focus:outline-none focus-visible:ring-2 dark:text-neutral-100 dark:hover:bg-blue-600 sm:h-12 sm:w-12"
+        class="inline-flex h-10 w-10 items-center justify-center rounded-full text-neutral-950 ring-neutral-950 transition-all duration-300 hover:bg-green-600 focus:outline-none focus-visible:ring-2 dark:text-neutral-100 dark:hover:bg-blue-600 sm:h-12 sm:w-12"
         aria-controls="website-menu"
         aria-expanded="false"
       >
         <span class="sr-only">Toggle menu</span>
-        <i id="menu-icon-open" class="ri-menu-line ri-xl block"></i>
-        <i id="menu-icon-close" class="ri-close-large-line ri-xl hidden"></i>
+        <i id="menu-icon-open" class="ri-menu-line ri-xl block transition-opacity duration-300"></i>
+        <i
+          id="menu-icon-close"
+          class="ri-close-large-line ri-xl hidden transition-opacity duration-300"></i>
       </button>
     </div>
   </div>
@@ -42,41 +48,45 @@
   {/* Responsive Mobile Menu */}
   <div
     id="website-menu"
-    class="mx-auto hidden h-[calc(100vh-4rem)] max-w-7xl px-4 sm:h-[calc(100vh-5rem)] sm:px-6 lg:px-8"
+    class="z-10 mx-auto h-[calc(100vh-4rem)] max-w-7xl transform px-4 transition-all duration-300 ease-in-out sm:h-[calc(100vh-5rem)] sm:px-6 lg:px-8"
+    style="opacity: 0; transform: translateY(-100%); display: none;"
   >
     <div class="grid h-full grid-cols-1 gap-6 py-6 sm:gap-8 sm:py-8 lg:grid-cols-2">
       {/* Hidden on Mobile, Visible on Large Screens */}
       <div
-        class="hidden items-center justify-center rounded-3xl bg-green-600 px-6 py-8 dark:bg-blue-600 sm:px-8 sm:py-12 lg:flex"
+        class="hidden items-center justify-center rounded-3xl bg-green-600 px-6 py-8 transition-colors duration-300 dark:bg-blue-600 sm:px-8 sm:py-12 lg:flex"
       >
         <p class="max-w-xs text-xl italic leading-relaxed text-neutral-100 sm:max-w-sm sm:text-2xl">
-          <span class="font-medium">Modern</span> enables seamless user engagement and drives conversions.
+          <span class="font-nunito-sans font-semibold">Modern</span> enables seamless user engagement
+          and drives conversions.
         </p>
       </div>
 
       {/* Navigation */}
-      <nav class="flex flex-col gap-2 divide-y divide-neutral-800 dark:divide-neutral-300">
+      <nav
+        class="flex flex-col gap-2 divide-y divide-neutral-800 transition-colors duration-300 dark:divide-neutral-300"
+      >
         <a
           href="/"
-          class="group py-4 text-2xl font-semibold tracking-tight text-neutral-950 transition dark:text-neutral-100 sm:py-6 sm:text-3xl"
+          class="font-nunito-sans group py-4 text-2xl font-semibold tracking-tight text-neutral-950 transition-colors duration-300 dark:text-neutral-100 sm:py-6 sm:text-3xl"
         >
           <span class="group-hover:underline">Home</span>
         </a>
         <a
           href="/about"
-          class="group py-4 text-2xl font-semibold tracking-tight text-neutral-950 transition dark:text-neutral-100 sm:py-6 sm:text-3xl"
+          class="font-nunito-sans group py-4 text-2xl font-semibold tracking-tight text-neutral-950 transition-colors duration-300 dark:text-neutral-100 sm:py-6 sm:text-3xl"
         >
           <span class="group-hover:underline">About</span>
         </a>
         <a
           href="/pricing"
-          class="group py-4 text-2xl font-semibold tracking-tight text-neutral-950 transition dark:text-neutral-100 sm:py-6 sm:text-3xl"
+          class="font-nunito-sans group py-4 text-2xl font-semibold tracking-tight text-neutral-950 transition-colors duration-300 dark:text-neutral-100 sm:py-6 sm:text-3xl"
         >
           <span class="group-hover:underline">Pricing</span>
         </a>
         <a
           href="/contact"
-          class="group py-4 text-2xl font-semibold tracking-tight text-neutral-950 transition dark:text-neutral-100 sm:py-6 sm:text-3xl"
+          class="font-nunito-sans group py-4 text-2xl font-semibold tracking-tight text-neutral-950 transition-colors duration-300 dark:text-neutral-100 sm:py-6 sm:text-3xl"
         >
           <span class="group-hover:underline">Contact</span>
         </a>
@@ -84,32 +94,80 @@
     </div>
   </div>
 
-  {/* JavaScript remains the same as in original code */}
   <script>
     // Theme toggle logic
     const themeToggle = document.getElementById('theme-toggle');
     const lightIcon = document.getElementById('theme-light');
     const darkIcon = document.getElementById('theme-dark');
-    const logo = document.getElementById('logo');
+
+    // Add transition to root element
+    document.documentElement.classList.add('transition-colors', 'duration-500');
 
     themeToggle.addEventListener('click', () => {
       document.documentElement.classList.toggle('dark');
       const isDark = document.documentElement.classList.contains('dark');
-      darkIcon.style.display = isDark ? 'none' : 'block';
-      lightIcon.style.display = isDark ? 'block' : 'none';
+
+      // Fade out current icon
+      if (isDark) {
+        darkIcon.style.opacity = '0';
+        setTimeout(() => {
+          darkIcon.style.display = 'none';
+          lightIcon.style.display = 'block';
+          // Small delay to trigger fade in
+          setTimeout(() => {
+            lightIcon.style.opacity = '1';
+          }, 50);
+        }, 300);
+      } else {
+        lightIcon.style.opacity = '0';
+        setTimeout(() => {
+          lightIcon.style.display = 'none';
+          darkIcon.style.display = 'block';
+          // Small delay to trigger fade in
+          setTimeout(() => {
+            darkIcon.style.opacity = '1';
+          }, 50);
+        }, 300);
+      }
     });
 
-    // Menu toggle logic
+    // Menu toggle logic with smooth transition
     const menuToggle = document.getElementById('menu-toggle');
     const menuIconOpen = document.getElementById('menu-icon-open');
     const menuIconClose = document.getElementById('menu-icon-close');
     const menuContent = document.getElementById('website-menu');
 
     menuToggle.addEventListener('click', () => {
-      const isOpen = menuContent.classList.contains('hidden');
-      menuContent.classList.toggle('hidden', !isOpen);
-      menuIconOpen.style.display = isOpen ? 'none' : 'block';
-      menuIconClose.style.display = isOpen ? 'block' : 'none';
+      const isOpen = menuContent.style.display !== 'none';
+
+      if (!isOpen) {
+        // Opening menu
+        menuContent.style.display = 'block';
+        // Small delay to trigger transition
+        setTimeout(() => {
+          menuContent.style.opacity = '1';
+          menuContent.style.transform = 'translateY(0)';
+          menuIconOpen.style.opacity = '0';
+          menuIconClose.style.opacity = '1';
+        }, 50);
+
+        setTimeout(() => {
+          menuIconOpen.style.display = 'none';
+          menuIconClose.style.display = 'block';
+        }, 300);
+      } else {
+        // Closing menu
+        menuContent.style.opacity = '0';
+        menuContent.style.transform = 'translateY(-100%)';
+        menuIconClose.style.opacity = '0';
+        menuIconOpen.style.opacity = '1';
+
+        setTimeout(() => {
+          menuContent.style.display = 'none';
+          menuIconClose.style.display = 'none';
+          menuIconOpen.style.display = 'block';
+        }, 300);
+      }
     });
   </script>
 </header>

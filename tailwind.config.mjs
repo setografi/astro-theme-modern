@@ -60,6 +60,10 @@ export default {
           },
         },
       },
+      fontFamily: {
+        'nunito-sans': ['"Nunito Sans"', 'sans-serif'],
+        nunito: ['"Nunito"', 'sans-serif'],
+      },
     },
   },
   darkMode: 'class',

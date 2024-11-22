@@ -1,85 +1,50 @@
-<!-- Testimonial.astro -->
+---
+// Testimonial.astro
+import TestimonialCard from '../common/TestimonialCard.astro';
+
+// Array testimonial dengan tipe terdefinisi
+const testimonials: {
+  quote: string;
+  name: string;
+  role: string;
+  company: string;
+  variant: 'dark' | 'accent' | 'orange';
+}[] = [
+  {
+    quote:
+      'Working with Modern has been transformative for our business. Their attention to detail and innovative solutions helped us achieve our goals faster than we imagined.',
+    name: 'Sarah Johnson',
+    role: 'CEO',
+    company: 'TechStart Inc.',
+    variant: 'dark',
+  },
+  {
+    quote:
+      'The team at Modern brought our vision to life with their exceptional design skills and technical expertise. They exceeded our expectations in every way.',
+    name: 'Michael Chen',
+    role: 'Marketing Director',
+    company: 'Growth Co.',
+    variant: 'accent',
+  },
+  {
+    quote:
+      "Modern's innovative approach to problem-solving and their commitment to quality made them the perfect partner for our digital transformation journey.",
+    name: 'Emma Davis',
+    role: 'Product Manager',
+    company: 'InnovateLab',
+    variant: 'orange',
+  },
+];
+---
+
 <section class="h-full w-full px-4 py-16">
-  {/* Responsive Heading */}
   <h2
-    class="mb-4 text-2xl font-bold text-neutral-950 dark:text-neutral-100 sm:mb-6 sm:text-3xl md:mb-8 md:text-4xl"
+    class="font-nunito-sans mb-4 text-2xl font-bold text-neutral-950 dark:text-neutral-100 sm:mb-6 sm:text-3xl md:mb-8 md:text-4xl"
   >
     What Our Clients Say
   </h2>
 
-  {/* Responsive Grid for Testimonials */}
   <div class="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6 lg:grid-cols-3">
-    {/* Testimonial 1 - Responsive Card */}
-    <div
-      class="flex flex-col justify-between rounded-3xl bg-neutral-700 p-4 dark:bg-neutral-200 sm:p-6 md:p-8"
-    >
-      <div class="mb-4 sm:mb-6">
-        <i class="ri-double-quotes-l ri-2x sm:ri-3x text-green-600 dark:text-blue-600"></i>
-        <p
-          class="mt-2 text-base leading-relaxed text-neutral-200 dark:text-neutral-800 sm:mt-4 sm:text-lg"
-        >
-          Working with Modern has been transformative for our business. Their attention to detail
-          and innovative solutions helped us achieve our goals faster than we imagined.
-        </p>
-      </div>
-      <div class="flex items-center gap-2 sm:gap-4">
-        <div class="overflow-hidden rounded-full bg-green-600 px-1 py-3 dark:bg-blue-600">
-          <i class="ri-user-3-line ri-xl p-1 text-neutral-100 sm:p-2"></i>
-        </div>
-        <div>
-          <h3 class="text-sm font-semibold text-neutral-100 dark:text-neutral-950 sm:text-base">
-            Sarah Johnson
-          </h3>
-          <p class="text-xs text-neutral-300 dark:text-neutral-700 sm:text-sm">
-            CEO, TechStart Inc.
-          </p>
-        </div>
-      </div>
-    </div>
-
-    {/* Testimonial 2 - Similar Responsive Styling */}
-    <div
-      class="flex flex-col justify-between rounded-3xl bg-green-600 p-4 dark:bg-blue-600 sm:p-6 md:p-8"
-    >
-      {/* Similar structure to Testimonial 1 */}
-      <div class="mb-4 sm:mb-6">
-        <i class="ri-double-quotes-l ri-2x sm:ri-3x text-neutral-100"></i>
-        <p class="mt-2 text-base leading-relaxed text-neutral-100 sm:mt-4 sm:text-lg">
-          The team at Modern brought our vision to life with their exceptional design skills and
-          technical expertise. They exceeded our expectations in every way.
-        </p>
-      </div>
-      <div class="flex items-center gap-2 sm:gap-4">
-        {/* Similar responsive styling */}
-        <div class="overflow-hidden rounded-full bg-neutral-100 px-1 py-3">
-          <i class="ri-user-3-line ri-xl p-1 text-green-600 dark:text-blue-600 sm:p-2"></i>
-        </div>
-        <div>
-          <h3 class="text-sm font-semibold text-neutral-100 sm:text-base">Michael Chen</h3>
-          <p class="text-xs text-neutral-200 sm:text-sm">Marketing Director, Growth Co.</p>
-        </div>
-      </div>
-    </div>
-
-    {/* Testimonial 3 - Similar Responsive Pattern */}
-    <div class="bg-accent-orange-500 flex flex-col justify-between rounded-3xl p-4 sm:p-6 md:p-8">
-      {/* Similar structure to previous testimonials */}
-      <div class="mb-4 sm:mb-6">
-        <i class="ri-double-quotes-l ri-2x sm:ri-3x text-neutral-100"></i>
-        <p class="mt-2 text-base leading-relaxed text-neutral-100 sm:mt-4 sm:text-lg">
-          Modern's innovative approach to problem-solving and their commitment to quality made them
-          the perfect partner for our digital transformation journey.
-        </p>
-      </div>
-      <div class="flex items-center gap-2 sm:gap-4">
-        <div class="overflow-hidden rounded-full bg-neutral-100 px-1 py-3">
-          <i class="ri-user-3-line ri-xl text-accent-orange-500 p-1 sm:p-2"></i>
-        </div>
-        <div>
-          <h3 class="text-sm font-semibold text-neutral-100 sm:text-base">Emma Davis</h3>
-          <p class="text-xs text-neutral-100 sm:text-sm">Product Manager, InnovateLab</p>
-        </div>
-      </div>
-    </div>
+    {testimonials.map((testimonial) => <TestimonialCard {...testimonial} />)}
   </div>
 </section>
