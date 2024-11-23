@@ -1,0 +1,27 @@
+---
+const tags = [
+  { id: 1, text: 'Modern' },
+  { id: 2, text: 'Website' },
+  { id: 3, text: 'UIUX' },
+  { id: 4, text: 'Developer' },
+  { id: 5, text: 'Minimalist' },
+  { id: 6, text: 'Simple' },
+  { id: 7, text: 'Dark_&_Light' },
+];
+---
+
+<!-- Tags Container -->
+<div class="flex flex-col space-y-4">
+  <p class="text-sm font-medium text-neutral-600 dark:text-neutral-400">Popular Tags</p>
+  <div class="flex flex-wrap gap-3">
+    {
+      tags.map((tag) => (
+        <div class="group cursor-pointer transition-all">
+          <p class="rounded-2xl bg-neutral-100 px-4 py-2 text-base font-bold text-neutral-600 transition-all hover:bg-green-600 hover:text-neutral-100 dark:bg-neutral-800 dark:text-neutral-300 dark:hover:bg-blue-600 md:text-lg">
+            #{tag.text}
+          </p>
+        </div>
+      ))
+    }
+  </div>
+</div>

@@ -1,0 +1,105 @@
+---
+import { Image } from 'astro:assets';
+import Team01 from '../../assets/images/team-01.jpg';
+import Team02 from '../../assets/images/team-02.jpg';
+import Team03 from '../../assets/images/team-03.jpg';
+---
+
+<!-- Team.astro  -->
+<section class="mx-auto h-full w-full max-w-7xl px-4 py-16">
+  <h2
+    class="mb-8 font-nunito-sans text-3xl font-bold text-neutral-950 dark:text-neutral-100 md:text-4xl"
+  >
+    Our Team
+  </h2>
+
+  <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+    <!-- Team Lead -->
+    <div
+      class="col-span-1 rounded-3xl bg-neutral-100 dark:bg-neutral-800 md:col-span-2 lg:col-span-1"
+    >
+      <div
+        class="mb-6 aspect-square w-full overflow-hidden rounded-3xl bg-neutral-200 dark:bg-neutral-700"
+      >
+        <Image
+          width={1624}
+          height={2030}
+          src={Team01}
+          alt="binh-ly-k_4A59MzZTY-unsplash - Team Lead"
+          class="h-full w-full object-cover"
+        />
+      </div>
+      <h3 class="mb-2 font-nunito-sans text-xl font-bold text-neutral-950 dark:text-neutral-100">
+        Mike Chen
+      </h3>
+      <p class="mb-4 text-green-600 dark:text-blue-400">Founder & Creative Director</p>
+      <p class="text-neutral-600 dark:text-neutral-300">
+        Visionary leader with 15+ years of experience in digital innovation and design leadership.
+      </p>
+    </div>
+
+    <!-- Team Grid -->
+    <div class="col-span-1 grid grid-cols-1 gap-6 md:col-span-2">
+      <!-- Team Stats -->
+      <div class="grid grid-cols-2 gap-6">
+        <div class="rounded-3xl bg-green-600 p-6 dark:bg-blue-600 md:p-8">
+          <p class="font-nunito-sans text-3xl font-bold text-neutral-100 md:text-4xl">25+</p>
+          <p class="mt-2 text-neutral-100">Team Members</p>
+        </div>
+        <div class="rounded-3xl bg-neutral-700 p-6 dark:bg-neutral-200 md:p-8">
+          <p
+            class="font-nunito-sans text-3xl font-bold text-neutral-100 dark:text-neutral-950 md:text-4xl"
+          >
+            8+
+          </p>
+          <p class="mt-2 text-neutral-200 dark:text-neutral-600">Countries</p>
+        </div>
+      </div>
+
+      <!-- Team Members Grid -->
+      <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+        <!-- Team Member 1 -->
+        <div class="rounded-3xl bg-neutral-100 p-6 dark:bg-neutral-800">
+          <div
+            class="mb-4 h-16 w-16 overflow-hidden rounded-full bg-neutral-200 dark:bg-neutral-700"
+          >
+            <Image
+              width={1920}
+              height={2880}
+              src={Team02}
+              alt="ayo-ogunseinde-6W4F62sN_yI-unsplash"
+              class="h-full w-full object-cover"
+            />
+          </div>
+          <h4
+            class="mb-1 font-nunito-sans text-lg font-bold text-neutral-950 dark:text-neutral-100"
+          >
+            Sarah Johnson
+          </h4>
+          <p class="text-green-600 dark:text-blue-400">Lead Developer</p>
+        </div>
+
+        <!-- Team Member 2 -->
+        <div class="rounded-3xl bg-neutral-100 p-6 dark:bg-neutral-800">
+          <div
+            class="mb-4 h-16 w-16 overflow-hidden rounded-full bg-neutral-200 dark:bg-neutral-700"
+          >
+            <Image
+              width={1920}
+              height={2880}
+              src={Team03}
+              alt="ian-dooley-d1UPkiFd04A-unsplash"
+              class="h-full w-full object-cover"
+            />
+          </div>
+          <h4
+            class="mb-1 font-nunito-sans text-lg font-bold text-neutral-950 dark:text-neutral-100"
+          >
+            Lucas Wright
+          </h4>
+          <p class="text-green-600 dark:text-blue-400">UI/UX Designer</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

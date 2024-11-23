@@ -1,0 +1,97 @@
+---
+import { Image } from 'astro:assets';
+import AboutHero from '../../assets/images/hero-image.jpg';
+---
+
+<section class="mx-auto w-full max-w-7xl space-y-8 px-4 py-8">
+  <!-- Top Image Banner -->
+  <div class="relative h-[300px] w-full overflow-hidden rounded-3xl">
+    <div class="absolute inset-0 bg-black/20"></div>
+    <Image
+      src={AboutHero}
+      alt="Modern - Creative Agency Banner"
+      width={1920}
+      height={1080}
+      loading="eager"
+      class="h-full w-full object-cover"
+    />
+  </div>
+
+  <!-- Content Section -->
+  <div class="grid grid-cols-1 gap-12 md:grid-cols-2">
+    <!-- Left Column -->
+    <div class="flex flex-col space-y-6">
+      <h2
+        class="font-nunito-sans text-3xl font-bold text-neutral-950 dark:text-neutral-100 md:text-4xl lg:text-5xl"
+      >
+        About
+      </h2>
+
+      <p class="leading-relaxed text-neutral-950 dark:text-neutral-100">
+        Modern is the ultimate theme designed for businesses, startups, and SaaS companies aiming to
+        thrive in a digital-first world. With a clean, minimal design and powerful features, Modern
+        empowers you to create visually stunning and highly functional websites.
+      </p>
+
+      <p class="leading-relaxed text-neutral-950 dark:text-neutral-100">
+        Whether you’re launching a marketing campaign, showcasing your services, or building a
+        startup, Modern is tailored to meet your needs with precision and style.
+      </p>
+    </div>
+
+    <!-- Right Column -->
+    <div class="flex flex-col justify-between">
+      <!-- Quote Box -->
+      <div class="rounded-3xl bg-green-600 px-6 py-4 dark:bg-blue-600 md:px-8 md:py-6">
+        <h2
+          class="text-sm font-medium leading-relaxed text-neutral-100 dark:text-neutral-100 sm:text-base"
+        >
+          "Transform your ideas into reality with a theme that balances elegance and performance.
+          Modern is crafted for innovators ready to redefine their industries."
+        </h2>
+      </div>
+
+      <!-- Features Section -->
+      <div class="flex flex-col space-y-6">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center space-x-4">
+            <div class="flex -space-x-2">
+              <!-- Feature Icons -->
+              <div
+                class="flex h-10 w-10 items-center justify-center rounded-full bg-neutral-700 text-neutral-100 dark:bg-neutral-200"
+              >
+                <span class="text-sm font-semibold">UI</span>
+              </div>
+              <div
+                class="flex h-10 w-10 items-center justify-center rounded-full bg-accent-orange-500 text-neutral-100"
+              >
+                <span class="text-sm font-semibold">UX</span>
+              </div>
+              <div
+                class="flex h-10 w-10 items-center justify-center rounded-full bg-green-600 text-neutral-100 dark:bg-blue-600"
+              >
+                <span class="text-sm font-semibold">Dev</span>
+              </div>
+            </div>
+            <span class="font-nunito-sans text-2xl font-bold">100+</span>
+          </div>
+
+          <div class="group flex cursor-pointer items-center space-x-2">
+            <span
+              class="text-neutral-950 transition-colors duration-500 group-hover:text-amber-500 dark:text-neutral-100"
+            >
+              Explore Features
+            </span>
+            <i
+              class="ri-arrow-right-line ri-xl transition-colors duration-500 group-hover:text-amber-500"
+            ></i>
+          </div>
+        </div>
+
+        <p class="text-sm text-green-600 dark:text-blue-400">
+          Crafted for flexibility and scalability
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

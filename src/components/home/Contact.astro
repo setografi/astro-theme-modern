@@ -1,5 +1,5 @@
 <!-- Contact.astro -->
-<section class="h-full w-full px-4 py-16">
+<section class="mx-auto h-full w-full max-w-7xl px-4 py-16">
   <div class="grid h-full gap-4 md:gap-6">
     {/* Responsive Grid for Contact Info & Social - Mobile First */}
     <div class="grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-6 lg:grid-cols-3">
@@ -14,23 +14,23 @@
             >
               Contact Us
             </h2>
-            <div class="space-y-2 sm:space-y-4">
+            <div class="space-y-1 sm:space-y-2">
               <p
                 class="flex items-center gap-2 text-sm text-neutral-100 sm:gap-3 sm:text-base md:text-lg"
               >
-                <i class="ri-phone-line"></i>
+                <i class="ri-phone-line ri-lg sm:ri-xl"></i>
                 +62 (29) 123 44 56
               </p>
               <p
                 class="flex items-center gap-2 text-sm text-neutral-100 sm:gap-3 sm:text-base md:text-lg"
               >
-                <i class="ri-mail-line"></i>
+                <i class="ri-mail-line ri-lg sm:ri-xl"></i>
                 modern@mail.com
               </p>
               <p
                 class="flex items-center gap-2 text-sm text-neutral-100 sm:gap-3 sm:text-base md:text-lg"
               >
-                <i class="ri-time-line"></i>
+                <i class="ri-time-line ri-lg sm:ri-xl"></i>
                 Mon-Fri: 9:00 - 17:00
               </p>
             </div>
@@ -40,7 +40,9 @@
           <div
             class="mt-4 flex flex-col gap-1 border-t border-neutral-100/20 pt-6 sm:mt-6 sm:gap-2 md:mt-8 md:pt-8"
           >
-            <p class="font-nunito-sans text-base text-neutral-100 sm:text-lg md:text-xl">
+            <p
+              class="font-nunito-sans text-base font-semibold text-neutral-100 sm:text-lg md:text-xl"
+            >
               {new Date().toLocaleDateString('en-US', { weekday: 'long' })}
             </p>
             <p class="font-nunito-sans text-base text-neutral-100 sm:text-lg md:text-xl">
@@ -66,7 +68,7 @@
             <a
               href="https://www.facebook.com/"
               target="_blank"
-              class="rounded-full bg-neutral-700 p-3 text-neutral-100 transition-colors duration-500 hover:bg-accent-orange-500 dark:bg-neutral-200 dark:text-neutral-700"
+              class="flex items-center justify-center rounded-full bg-neutral-700 px-3 py-4 text-neutral-100 transition-colors duration-500 hover:bg-accent-orange-500 dark:bg-neutral-200 dark:text-neutral-700 dark:hover:bg-blue-600 dark:hover:text-neutral-100"
             >
               <span class="sr-only">Facebook</span>
               <i class="ri-facebook-line ri-xl"></i>
@@ -74,7 +76,7 @@
             <a
               href="https://www.whatsapp.com/"
               target="_blank"
-              class="rounded-full bg-neutral-700 p-3 text-neutral-100 transition-colors duration-500 hover:bg-accent-orange-500 dark:bg-neutral-200 dark:text-neutral-700"
+              class="flex items-center justify-center rounded-full bg-neutral-700 px-3 py-4 text-neutral-100 transition-colors duration-500 hover:bg-accent-orange-500 dark:bg-neutral-200 dark:text-neutral-700 dark:hover:bg-blue-600 dark:hover:text-neutral-100"
             >
               <span class="sr-only">Whatsapp</span>
               <i class="ri-whatsapp-line ri-xl"></i>
@@ -82,7 +84,7 @@
             <a
               href="https://www.instagram.com/"
               target="_blank"
-              class="rounded-full bg-neutral-700 p-3 text-neutral-100 transition-colors duration-500 hover:bg-accent-orange-500 dark:bg-neutral-200 dark:text-neutral-700"
+              class="flex items-center justify-center rounded-full bg-neutral-700 px-3 py-4 text-neutral-100 transition-colors duration-500 hover:bg-accent-orange-500 dark:bg-neutral-200 dark:text-neutral-700 dark:hover:bg-blue-600 dark:hover:text-neutral-100"
             >
               <span class="sr-only">Instagram</span>
               <i class="ri-instagram-line ri-xl"></i>
@@ -92,7 +94,7 @@
           {/* Responsive Text */}
           <div class="mt-4 text-center sm:mt-6 md:mt-8">
             <h3
-              class="font-nunito-sans mb-2 text-xl font-semibold text-neutral-950 dark:text-neutral-100 sm:mb-4 sm:text-2xl"
+              class="mb-2 font-nunito-sans text-xl font-semibold text-neutral-950 dark:text-neutral-100 sm:mb-4 sm:text-2xl"
             >
               Connect With Us
             </h3>
