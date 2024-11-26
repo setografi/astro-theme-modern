@@ -35,6 +35,9 @@ const { title } = Astro.props;
 
     <script>
       import Alpine from 'alpinejs';
+      import collapse from '@alpinejs/collapse';
+
+      Alpine.plugin(collapse);
 
       document.addEventListener('alpine:init', () => {
         Alpine.store('theme', {

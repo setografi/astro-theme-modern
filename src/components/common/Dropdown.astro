@@ -9,9 +9,47 @@ const { number, title, content } = Astro.props;
 ---
 
 <!-- Dropdown.astro -->
-<div class="relative">
+<div
+  x-data="{ 
+    isOpen: false,
+    activeDropdown: null,
+    toggle(el) {
+      const dropdown = el.nextElementSibling;
+      const content = dropdown.querySelector('div');
+      
+      // Jika dropdown yang sama diklik
+      if (this.isOpen) {
+        dropdown.style.maxHeight = '0px';
+        setTimeout(() => {
+          dropdown.classList.add('hidden');
+          this.isOpen = false;
+          this.activeDropdown = null;
+        }, 300);
+        return;
+      }
+
+      // Tutup dropdown aktif sebelumnya
+      if (this.activeDropdown && this.activeDropdown !== dropdown) {
+        this.activeDropdown.style.maxHeight = '0px';
+        setTimeout(() => {
+          this.activeDropdown.classList.add('hidden');
+        }, 300);
+      }
+
+      // Buka dropdown baru
+      dropdown.classList.remove('hidden');
+      setTimeout(() => {
+        dropdown.style.maxHeight = `${content.scrollHeight}px`;
+      }, 0);
+      
+      this.isOpen = true;
+      this.activeDropdown = dropdown;
+    }
+  }"
+  class="relative"
+>
   <button
-    data-dropdown={number}
+    @click="toggle($el)"
     class="dropdown-btn w-full rounded-t-3xl border-x-2 border-t-2 border-neutral-800 bg-neutral-100 p-4 text-left text-2xl font-semibold hover:bg-neutral-200 focus:outline-none dark:border-neutral-300 dark:bg-neutral-600 dark:hover:bg-neutral-700 md:p-6 md:text-3xl"
   >
     <span class="inline-flex items-center">
@@ -23,8 +61,8 @@ const { number, title, content } = Astro.props;
       </span>
     </span>
   </button>
+
   <div
-    id={`dropdown${number}`}
     class="dropdown-content hidden w-full transform overflow-hidden border-x-2 border-neutral-800 bg-neutral-100 transition-all duration-300 ease-in-out dark:border-neutral-300 dark:bg-neutral-600"
     style="max-height: 0;"
   >
@@ -35,51 +73,3 @@ const { number, title, content } = Astro.props;
     </div>
   </div>
 </div>
-
-<script>
-  let activeDropdown = null;
-
-  document.addEventListener('DOMContentLoaded', () => {
-    const buttons = document.querySelectorAll('.dropdown-btn');
-
-    buttons.forEach((button) => {
-      button.addEventListener('click', function () {
-        const number = this.getAttribute('data-dropdown');
-        const dropdown = document.getElementById(`dropdown${number}`);
-
-        if (activeDropdown === dropdown) {
-          toggleDropdown(dropdown);
-          return;
-        }
-
-        if (activeDropdown) {
-          toggleDropdown(activeDropdown, false);
-        }
-
-        toggleDropdown(dropdown, true);
-      });
-    });
-  });
-
-  function toggleDropdown(dropdown, show = null) {
-    const content = dropdown.querySelector('div');
-    const isHidden = dropdown.classList.contains('hidden');
-    const shouldShow = show !== null ? show : isHidden;
-
-    if (shouldShow) {
-      dropdown.classList.remove('hidden');
-      setTimeout(() => {
-        dropdown.style.maxHeight = `${content.scrollHeight}px`;
-      }, 0);
-      activeDropdown = dropdown;
-    } else {
-      dropdown.style.maxHeight = '0px';
-      setTimeout(() => {
-        dropdown.classList.add('hidden');
-      }, 300);
-      if (activeDropdown === dropdown) {
-        activeDropdown = null;
-      }
-    }
-  }
-</script>
