@@ -1,0 +1,41 @@
+---
+import Dropdown from '../common/Dropdown.astro';
+
+const dropdownData = [
+  {
+    number: '01',
+    title: 'STRATEGY',
+    content:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore autem quo doloribus, molestias necessitatibus libero aliquam eum dolor facilis impedit nesciunt asperiores reprehenderit, perferendis cum saepe, ratione quia. Quibusdam, impedit!',
+  },
+  {
+    number: '02',
+    title: 'DESIGN',
+    content:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore autem quo doloribus, molestias necessitatibus libero aliquam eum dolor facilis impedit nesciunt asperiores reprehenderit, perferendis cum saepe, ratione quia. Quibusdam, impedit!',
+  },
+  {
+    number: '03',
+    title: 'CHANGE',
+    content:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore autem quo doloribus, molestias necessitatibus libero aliquam eum dolor facilis impedit nesciunt asperiores reprehenderit, perferendis cum saepe, ratione quia. Quibusdam, impedit!',
+  },
+];
+---
+
+<!-- Faq.astro -->
+<section class="mx-auto h-full w-full max-w-7xl px-4 py-16">
+  <h2
+    class="mb-8 font-nunito-sans text-3xl font-bold text-neutral-950 dark:text-neutral-100 md:text-4xl"
+  >
+    Frequently asked questions
+  </h2>
+
+  <div class="flex flex-col space-y-3 md:space-y-4">
+    {
+      dropdownData.map((item) => (
+        <Dropdown number={item.number} title={item.title} content={item.content} />
+      ))
+    }
+  </div>
+</section>
