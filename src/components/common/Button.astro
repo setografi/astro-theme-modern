@@ -1,0 +1,29 @@
+---
+interface Props {
+  text: string;
+  variant?: 'neutral' | 'color';
+  clickHandler?: string;
+}
+
+const { text, variant = 'neutral', clickHandler } = Astro.props;
+
+const variantClasses = {
+  neutral: {
+    bg: 'bg-neutral-200 hover:bg-neutral-700 dark:bg-neutral-700 dark:hover:bg-neutral-200',
+    text: 'text-neutral-700 group-hover:text-neutral-200 dark:text-neutral-200 dark:group-hover:text-neutral-700',
+  },
+  color: {
+    bg: 'bg-green-600 hover:bg-neutral-700 dark:bg-blue-600 dark:hover:bg-neutral-200',
+    text: 'text-neutral-100 group-hover:text-neutral-200 dark:text-neutral-100 dark:group-hover:text-neutral-700',
+  },
+}[variant];
+---
+
+<button
+  x-on:click={clickHandler}
+  class={`group px-6 py-3 md:px-8 md:py-4 rounded-3xl transition-all duration-500 ${variantClasses.bg}`}
+>
+  <span class={`text-sm md:text-base font-medium transition duration-500 ${variantClasses.text}`}>
+    {text}
+  </span>
+</button>

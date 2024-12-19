@@ -1,3 +1,7 @@
+---
+import Button from '../common/Button.astro';
+---
+
 <!-- About.astro -->
 <section class="mx-auto h-full w-full max-w-7xl px-4 py-16">
   <div class="grid h-full grid-cols-1 gap-4 sm:gap-6 md:gap-8 lg:grid-cols-3">
@@ -18,17 +22,7 @@
         maiores illo aliquid ab, qui, expedita hic eveniet?
       </p>
 
-      {/* Responsive Button */}
-      <a
-        href="/about"
-        class="group rounded-3xl bg-green-600 px-6 py-3 transition duration-500 hover:bg-neutral-700 dark:bg-blue-600 dark:hover:bg-neutral-200 md:px-8 md:py-4"
-      >
-        <span
-          class="text-sm font-medium text-neutral-100 transition-all group-hover:text-neutral-200 dark:text-neutral-100 dark:group-hover:text-neutral-700 sm:text-base"
-        >
-          Read About Us
-        </span>
-      </a>
+      <Button text="Read About Us" variant="color" clickHandler="'alert(`Button clicked!`)'" />
     </div>
   </div>
 </section>
