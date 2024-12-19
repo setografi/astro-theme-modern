@@ -148,6 +148,22 @@
         this.xProject = 0;
         this.yProject = 0;
         this.sizeProjection = 0;
+
+        // Random Color
+        // const hue = Math.random() * 360;
+        // const lightness = Math.random() * 20 + 50;
+        // this.color = `hsl(${hue}, 80%, ${lightness}%)`;
+
+        const colors = ['#7b97b0', '#496373', '#359974', '#0b5f42', '#FFE5DC', '#E9641A'];
+
+        this.color = colors[Math.floor(Math.random() * colors.length)];
+
+        const opacity = Math.random() * 0.5 + 0.5;
+        this.color =
+          this.color +
+          Math.floor(opacity * 255)
+            .toString(16)
+            .padStart(2, '0');
       }
 
       project(sin, cos) {
@@ -160,6 +176,7 @@
 
       draw(sin, cos) {
         this.project(sin, cos);
+        ctx.fillStyle = this.color;
         ctx.beginPath();
         ctx.arc(this.xProject, this.yProject, DOT_RADIUS * this.sizeProjection, 0, Math.PI * 2);
         ctx.closePath();
